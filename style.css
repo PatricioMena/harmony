@@ -573,17 +573,28 @@ h4 {
 }
 
 .section--sign-up .section__header {
-  color: #fff;
+  color: var(--color-primary);
   text-align: center;
+  margin-bottom: 2.4rem;
 }
 
 .section--sign-up .section__title {
   margin-bottom: 6rem;
 }
 
+.section--sign-up .section__description {
+  text-transform: none;
+  color: var(--color-primary);
+}
+
 .section--sign-up .btn {
+  background-color: var(--color-accent);
   font-size: 1.9rem;
   padding: 2rem 5rem;
+}
+
+.section--sign-up .btn:hover {
+  background-color: var(--color-accent-darker);
 }
 
 /* FOOTER */
