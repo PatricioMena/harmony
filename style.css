@@ -4,6 +4,7 @@
   --color-primary: #fff3e2;
   --color-secondary: #ffe5ca;
   --color-accent: #ff6230;
+  --color-accent-darker: #bf4a24;
   --gradient-primary: linear-gradient(to top, #ffcebf, #ff6230);
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 }
@@ -337,8 +338,15 @@ h4 {
 }
 
 .operations__tab {
+  font-size: 1.6rem;
+  background-color: var(--color-accent);
   margin-right: 2.5rem;
   transform: translateY(-50%);
+  transition: background 0.3s ease-in-out;
+}
+
+.operations__tab:hover {
+  background-color: var(--color-accent-darker);
 }
 
 .operations__tab span {
@@ -347,24 +355,8 @@ h4 {
   display: inline-block;
 }
 
-.operations__tab--1 {
-  background-color: var(--color-secondary);
-}
-
-.operations__tab--1:hover {
-  background-color: var(--color-secondary-darker);
-}
-
-.operations__tab--3 {
-  background-color: var(--color-tertiary);
-  margin: 0;
-}
-
-.operations__tab--3:hover {
-  background-color: var(--color-tertiary-darker);
-}
-
 .operations__tab--active {
+  background-color: var(--color-accent-darker);
   transform: translateY(-66%);
 }
 
@@ -372,7 +364,7 @@ h4 {
   display: none;
 
   /* JUST PRESENTATIONAL */
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   padding: 2.5rem 7rem 6.5rem 7rem;
 }
 
@@ -393,37 +385,20 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-accent-darker);
   height: 7rem;
   width: 7rem;
   border-radius: 50%;
 }
 
 .operations__icon svg {
-  height: 2.75rem;
-  width: 2.75rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  fill: var(--color-primary);
 }
 
 .operations__content p {
   grid-column: 2;
-}
-
-.operations__icon--1 {
-  background-color: var(--color-secondary-opacity);
-}
-.operations__icon--2 {
-  background-color: var(--color-primary-opacity);
-}
-.operations__icon--3 {
-  background-color: var(--color-tertiary-opacity);
-}
-.operations__icon--1 svg {
-  fill: var(--color-secondary-darker);
-}
-.operations__icon--2 svg {
-  fill: var(--color-primary);
-}
-.operations__icon--3 svg {
-  fill: var(--color-tertiary);
 }
 
 /* SLIDER */
@@ -464,7 +439,8 @@ h4 {
   z-index: 10;
 
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background-color: var(--color-accent);
+  opacity: 0.5;
   font-family: inherit;
   color: #333;
   border-radius: 50%;
@@ -472,6 +448,15 @@ h4 {
   width: 5.5rem;
   font-size: 3.25rem;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__btn svg {
+  width: 3.2rem;
+  fill: var(--color-primary);
 }
 
 .slider__btn--left {
@@ -513,7 +498,7 @@ h4 {
 
 .dots__dot--active {
   /* background-color: #fff; */
-  background-color: #888;
+  background-color: var(--color-accent);
   opacity: 1;
 }
 
@@ -527,11 +512,12 @@ h4 {
   content: '\201C';
   position: absolute;
   top: -5.7rem;
-  left: -6.8rem;
+  left: -8rem;
   line-height: 1;
   font-size: 20rem;
   font-family: inherit;
-  color: var(--color-primary);
+  color: var(--color-accent);
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -563,7 +549,7 @@ h4 {
 }
 
 .testimonial__name {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 500;
   align-self: end;
   margin: 0;
