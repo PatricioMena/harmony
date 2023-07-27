@@ -4,35 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish&display=swap" rel="stylesheet">
   <title>Harmony | Designing spaces that bring peace</title>
 
-  <link rel="stylesheet" href="style.css">
 
-  <script defer src="script.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/">
+  <link rel="icon" href="/favicon/favicon-16x16.png" type="image/png" sizes="'16x16">
+  <link rel="icon" href="/favicon/favicon-32x32.png" type="image/png" sizes="'32x32">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="queries.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
 </head>
 <body>
   <header class="header">
     <nav class="nav">
-      <img src="img/logo.png" alt="Bankist logo" class="nav__logo" id="logo" designer="Jonas" data-version-number="3.0" />
-      <ul class="nav__links">
-        <li class="nav__item">
-          <a class="nav__link" href="#section--1">Features</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#section--2">Process</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#section--3">Testimonials</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link btn btn--nav btn--show-modal" href="#">Contact Us</a>
-        </li>
-      </ul>
+      <img src="img/logo.svg" alt="Harmony Logo" class="nav__logo" id="logo" designer="Patricio Mena" data-version-number="3.0" />
+
+      <div id="main-navigation">
+        <ul id="navigation-items" class="nav__links" data-visible="false">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Process</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link btn btn--nav btn--show-modal" href="#">Contact Us</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Mobile Button -->
+      <button id="mobile-nav-toggle" class="mobile__btn" aria-controls="main-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
     </nav>
 
     <div class="header__title">
@@ -42,8 +59,8 @@
       </h1>
       <p class="header__subheading">Discover your perfect space with our professional interior design services</p>
       <div class="header__btns">
-        <a class="btn btn--scroll-to">Start Project</a>
-        <a class="btn btn--outline btn--scroll-to">Learn more</a>
+        <a class="btn btn--scroll-to" id="scroll-cta">Start Project</a>
+        <a class="btn btn--outline btn--scroll-to" id="scroll-features">Learn more</a>
       </div>
 
     </div>
@@ -126,12 +143,16 @@
             <use xlink:href="img/icons.svg#icon-bubble"></use>
           </svg>
         </div>
-        <h5 class="operations__header">
-          Discussing Your Vision - Bring Your Dream Space to Life
-        </h5>
-        <p>
-          We'll start with a consultation to discuss your vision for the space, your needs and preferences, and your budget. During this phase, our experienced design team will work with you to gain a deep understanding of your style, goals, and requirements for the space.
-        </p>
+        <div class="operations__text-box">
+          <h5 class="operations__header">
+            Discussing Your Vision - Bring Your Dream Space to Life
+          </h5>
+          <p>
+            We'll start with a consultation to discuss your vision for the space, your needs and preferences, and your budget. During this phase, our experienced design team will work with you to gain a deep understanding of your style, goals, and requirements for the space.
+          </p>
+
+        </div>
+
       </div>
 
       <div class="operations__content operations__content--2">
@@ -163,7 +184,8 @@
     </div>
   </section>
 
-  <section class="section" id="section--3">
+  <section class="section section--testimonial">
+
     <div class="section__title section__title--testimonials">
       <h2 class="section__description">Happy Clients, Beautiful Spaces</h2>
       <h3 class="section__header">
@@ -171,103 +193,120 @@
       </h3>
     </div>
 
-    <div class="slider">
-      <div class="slide">
-        <div class="testimonial">
-          <h5 class="testimonial__header">A dream come true!</h5>
-          <blockquote class="testimonial__text">
-            They took the time to really understand my vision for my space, and the end result was even better than I could have imagined. Their attention to detail and commitment to quality craftsmanship was evident in every aspect of the design, and I couldn't be happier with the final result.
-          </blockquote>
-          <address class="testimonial__author">
-            <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
-            <h6 class="testimonial__name">Aarav Lynn</h6>
-            <p class="testimonial__location">San Francisco, USA</p>
-          </address>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide_1">
+          <div class="testimonial--swiper">
+            <h5 class="testimonial__header">A dream come true!</h5>
+            <blockquote class="testimonial__text">
+              They took the time to really understand my vision for my space, and the end result was even better than I could have imagined. Their attention to detail and commitment to quality craftsmanship was evident in every aspect of the design, and I couldn't be happier with the final result.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
+              <div class="testimonial__author-info">
+                <h6 class="testimonial__name">Mark Davis</h6>
+                <p class="testimonial__location">Houston, TX</p>
+              </div>
+            </address>
+          </div>
+        </div>
+        <div class="swiper-slide slide_2">
+          <div class="testimonial--swiper">
+            <h5 class="testimonial__header"> They truly understood my idea.</h5>
+            <blockquote class="testimonial__text">
+              I had been struggling for months to figure out how to make my space work for me, but it wasn't until I worked with harmony design that I was able to create the perfect layout. Their team was so collaborative and easy to work with, and they really listened to my needs and preferences. I now have a space that is both beautiful and functional, and I couldn't be happier.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
+              <div class="testimonial__author-info">
+                <h6 class="testimonial__name">Sarah Rodriguez</h6>
+                <p class="testimonial__location">Austin, TX</p>
+              </div>
+            </address>
+          </div>
+        </div>
+        <div class="swiper-slide slide_3">
+          <div class="testimonial--swiper">
+            <h5 class="testimonial__header">
+              They exceeded my expectations.
+            </h5>
+            <blockquote class="testimonial__text">
+              Their team was responsive, creative, and professional throughout the entire design process, and they were able to create a space that perfectly reflected my style and personality. I would highly recommend them to anyone looking for a talented and reliable interior design team.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
+              <div class="testimonial__author-info">
+                <h6 class="testimonial__name">Michael Thompson</h6>
+                <p class="testimonial__location">Fort Worth, TX</p>
+              </div>
+            </address>
+          </div>
+        </div>
+        <div class="swiper-slide slide_4">
+          <div class="testimonial--swiper">
+            <h5 class="testimonial__header">
+              Even for limited budgets.
+            </h5>
+            <blockquote class="testimonial__text">
+              They were able to source high-quality materials and furnishings at a price that worked for me, and I was impressed by their attention to detail and commitment to ensuring that every aspect of the design was perfect. I would definitely work with them again!
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-4.jpg" alt="" class="testimonial__photo" />
+              <div class="testimonial__author-info">
+                <h6 class="testimonial__name">Juan Gonzalez</h6>
+                <p class="testimonial__location">El Paso, TX</p>
+              </div>
+            </address>
+          </div>
+
+        </div>
+        <div class="swiper-slide slide_5">
+          <div class="testimonial--swiper">
+            <h5 class="testimonial__header">
+              What a smooth process!
+            </h5>
+            <blockquote class="testimonial__text">
+              They made the entire process so easy and stress-free. They were able to take my vague ideas and turn them into a cohesive design plan that exceeded my expectations. Their team was professional and communicative throughout the entire process, and I would highly recommend them to anyone looking to transform their space.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-5.jpg" alt="" class="testimonial__photo" />
+              <div class="testimonial__author-info">
+                <h6 class="testimonial__name">Karen Patel</h6>
+                <p class="testimonial__location">Irving, TX</p>
+              </div>
+            </address>
+
+          </div>
+
         </div>
       </div>
-
-      <div class="slide">
-        <div class="testimonial">
-          <h5 class="testimonial__header">
-            They truly understood my idea.
-          </h5>
-          <blockquote class="testimonial__text">
-            I had been struggling for months to figure out how to make my space work for me, but it wasn't until I worked with harmony design that I was able to create the perfect layout. Their team was so collaborative and easy to work with, and they really listened to my needs and preferences. I now have a space that is both beautiful and functional, and I couldn't be happier.
-          </blockquote>
-          <address class="testimonial__author">
-            <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
-            <h6 class="testimonial__name">Miyah Miles</h6>
-            <p class="testimonial__location">London, UK</p>
-          </address>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="testimonial">
-          <h5 class="testimonial__header">
-            What a smooth process!
-          </h5>
-          <blockquote class="testimonial__text">
-            They made the entire process so easy and stress-free. They were able to take my vague ideas and turn them into a cohesive design plan that exceeded my expectations. Their team was professional and communicative throughout the entire process, and I would highly recommend them to anyone looking to transform their space.
-          </blockquote>
-          <address class="testimonial__author">
-            <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
-            <h6 class="testimonial__name">Francisco Gomes</h6>
-            <p class="testimonial__location">Lisbon, Portugal</p>
-          </address>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="testimonial">
-          <h5 class="testimonial__header">
-            Even for limited budgets.
-          </h5>
-          <blockquote class="testimonial__text">
-            They were able to source high-quality materials and furnishings at a price that worked for me, and I was impressed by their attention to detail and commitment to ensuring that every aspect of the design was perfect. I would definitely work with them again!
-          </blockquote>
-          <address class="testimonial__author">
-            <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
-            <h6 class="testimonial__name">Francisco Gomes</h6>
-            <p class="testimonial__location">Lisbon, Portugal</p>
-          </address>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="testimonial">
-          <h5 class="testimonial__header">
-            They exceeded my expectations.
-          </h5>
-          <blockquote class="testimonial__text">
-            Their team was responsive, creative, and professional throughout the entire design process, and they were able to create a space that perfectly reflected my style and personality. I would highly recommend them to anyone looking for a talented and reliable interior design team.
-          </blockquote>
-          <address class="testimonial__author">
-            <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
-            <h6 class="testimonial__name">Francisco Gomes</h6>
-            <p class="testimonial__location">Lisbon, Portugal</p>
-          </address>
-        </div>
-      </div>
-
-      <button class="slider__btn slider__btn--left"><svg class="slider__icon">
-          <use xlink:href="img/icons.svg#icon-arrow-left"></use>
-        </svg></button>
-      <button class="slider__btn slider__btn--right"><svg class="slider__icon">
-          <use xlink:href="img/icons.svg#icon-arrow-right"></use>
-        </svg></button>
-      <div class="dots"></div>
+      <div class="swiper-pagination"></div>
     </div>
+    <div class="swiper-button-prev-unique">
+      <svg>
+        <use xlink:href="img/icons.svg#icon-arrow-left"></use>
+      </svg>
+    </div>
+    <div class="swiper-button-next-unique">
+      <svg>
+        <use xlink:href="img/icons.svg#icon-arrow-right"></use>
+      </svg>
+    </div>
+
   </section>
 
-  <section class="section section--sign-up">
-    <div class="section__title">
-      <h3 class="section__header">
-        Your dream space awaits
-      </h3>
-      <p class="section__description">Let our talented design team bring your vision to life.</p>
+  <section class="section section--sign-up" id="cta">
+    <div class="container">
+      <div class="section__title">
+        <h3 class="section__header">
+          Your dream space awaits
+        </h3>
+        <p class="section__description">Let our talented design team bring your vision to life.</p>
+      </div>
+      <button class="btn btn--show-modal">Schedule a Consultation</button>
     </div>
-    <button class="btn btn--show-modal">Schedule a Consultation</button>
+
   </section>
 
   <footer class="footer">
@@ -294,19 +333,17 @@
         <a class="footer__link" href="#">Contact Us</a>
       </li>
     </ul>
-    <img src="img/icon.png" alt="Logo" class="footer__logo" />
+    <img src="img/Logo-white.svg" alt="Logo" class="footer__logo" />
     <p class="footer__copyright">
       &copy; Copyright by
-      <a class="footer__link twitter-link" target="_blank" href="https://twitter.com/jonasschmedtman">Jonas Schmedtmann</a>. Use for learning or your portfolio. Don't use to teach. Don't claim
-      as your own product.
+      <a class="footer__link twitter-link" target="_blank" href="">Patricio Mena</a>.
     </p>
   </footer>
 
   <div class="modal hidden">
     <button class="btn--close-modal">&times;</button>
     <h2 class="modal__header">
-      Open your bank account <br />
-      in just <span class="highlight">5 minutes</span>
+      Start your consultation in only <span class="highlight">1 minute</span>
     </h2>
     <form class="modal__form">
       <label>First Name</label>
@@ -315,11 +352,14 @@
       <input type="text" />
       <label>Email Address</label>
       <input type="email" />
-      <button class="btn">Next step &rarr;</button>
+      <button class="btn">Create dream space</button>
     </form>
   </div>
   <div class="overlay hidden"></div>
 
-  <!-- <script src="script.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script defer src="script.js"></script>
 </body>
 </html>
